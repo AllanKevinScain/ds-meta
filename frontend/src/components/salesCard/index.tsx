@@ -1,4 +1,5 @@
 import { NotifyButton } from "../notifyButton";
+import { InputDate } from "../InputDate";
 import "./styles.css";
 
 export const SalesCard: React.FC = () => {
@@ -7,10 +8,10 @@ export const SalesCard: React.FC = () => {
       <h2 className="dsmeta-sales-title">Vendas</h2>
       <div>
         <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
+          <InputDate />
         </div>
         <div className="dsmeta-form-control-container">
-          <input className="dsmeta-form-control" type="text" />
+          <InputDate />
         </div>
       </div>
 
