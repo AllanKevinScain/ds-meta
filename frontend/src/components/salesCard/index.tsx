@@ -1,17 +1,29 @@
 import { NotifyButton } from "../notifyButton";
 import { InputDate } from "../InputDate";
 import "./styles.css";
+import { useState } from "react";
 
 export const SalesCard: React.FC = () => {
+  const min = new Date(new Date().setDate(new Date().getDate() - 365));
+  const max = new Date();
+
+  const [minDate, setMinDate] = useState(min);
+  const [maxDate, setMaxDate] = useState(max);
   return (
     <div className="dsmeta-card">
       <h2 className="dsmeta-sales-title">Vendas</h2>
       <div>
         <div className="dsmeta-form-control-container">
-          <InputDate />
+          <InputDate
+            selected={minDate}
+            onChange={(date: Date) => setMinDate(date)}
+          />
         </div>
         <div className="dsmeta-form-control-container">
-          <InputDate />
+          <InputDate
+            selected={maxDate}
+            onChange={(date: Date) => setMaxDate(date)}
+          />
         </div>
       </div>
 

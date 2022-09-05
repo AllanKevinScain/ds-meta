@@ -2,11 +2,16 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./styles.css";
 
-export const InputDate: React.FC = () => {
+interface InputDateProps {
+  selected: Date;
+  onChange: (date: Date) => void;
+}
+
+export const InputDate: React.FC<InputDateProps> = ({ selected, onChange }) => {
   return (
     <DatePicker
-      selected={new Date()}
-      onChange={(date: Date) => {}}
+      selected={selected}
+      onChange={onChange}
       className="dsmeta-form-control"
       dateFormat="dd/MM/yyyy"
     />
