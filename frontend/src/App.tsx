@@ -1,5 +1,11 @@
+import { NotifyButton } from "./components/notifyButton";
+
 function App() {
-  return <div>Ola</div>;
+  return (
+    <div>
+      <NotifyButton />
+    </div>
+  );
 }
 
 export default App;
