@@ -1,7 +1,8 @@
 import { NotifyButton } from "../notifyButton";
 import { InputDate } from "../InputDate";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const SalesCard: React.FC = () => {
   const min = new Date(new Date().setDate(new Date().getDate() - 365));
@@ -9,6 +10,13 @@ export const SalesCard: React.FC = () => {
 
   const [minDate, setMinDate] = useState(min);
   const [maxDate, setMaxDate] = useState(max);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/sales").then((res) => {
+      console.log("🚀 ~ file: index.tsx ~ line 16 ~ axios.get ~ res", res.data);
+    });
+  }, []);
+
   return (
     <div className="dsmeta-card">
       <h2 className="dsmeta-sales-title">Vendas</h2>
