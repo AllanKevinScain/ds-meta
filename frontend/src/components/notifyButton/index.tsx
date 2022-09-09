@@ -6,8 +6,8 @@ import "./styles.css";
 
 export const NotifyButton: React.FC<{ saleId: number }> = ({ saleId }) => {
   const handleClick = (id: number) => {
-    axios(`${BASE_URL}/sales/${id}/notification`).then((res) => {
-      toast.info("SMS envido com sucesso!");
+    axios(`${BASE_URL}/sales/${id}/notification`).then(() => {
+      toast.info("SMS envido para o telefone do desenvolvedor!");
     });
   };
 
