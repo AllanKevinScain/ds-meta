@@ -68,7 +68,7 @@ export const SalesCard: React.FC = () => {
                 <td>{item.amount.toFixed(2)}</td>
                 <td>
                   <div className="dsmeta-red-btn-container">
-                    <NotifyButton />
+                    <NotifyButton saleId={item.id} />
                   </div>
                 </td>
               </tr>
